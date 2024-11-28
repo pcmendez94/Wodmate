@@ -115,3 +115,158 @@ body {
 .social-icons a:hover {
     color: #9a02ff;
 }
+/* Contenido para pagina registro.php */
+
+/* Fondo de la sección */
+.auth-section-registro {
+    position: relative;
+    min-height: 100vh; /* Asegura que la sección ocupe toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column; /* Alineamos el contenido en columna */
+    justify-content: space-between; /* Espacia el contenido entre el principio y el final */
+    background: url('../img/curved-images/wallpapercsf.jpg') no-repeat center center / cover;
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center top; /* Asegura que la imagen esté centrada en la parte superior */
+}
+
+/* Overlay sobre la imagen */
+.auth-section-registro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Ajustamos la opacidad */
+    z-index: 1;
+    filter: grayscale(100%);
+}
+
+/* Contenedor del formulario */
+.auth-section-registro .container {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima del overlay */
+}
+
+/* Card que contiene el formulario */
+.auth-section-registro .card {
+    background: rgba(255, 255, 255, 0.6); /* Hacer la tarjeta un poco más transparente */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Contenedor de campos agrupados en filas */
+.auth-section-registro .card .form-group-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas para PC */
+}
+
+/* Para la segunda fila (Fecha de nacimiento, RUT y dígito) */
+.auth-section-registro .card .form-group-container-second-row {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas para PC */
+}
+
+/* Para la tercera fila (Correo, Contraseña y Repetir Contraseña) */
+.auth-section-registro .card .form-group-container-third-row {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas para PC */
+}
+
+.auth-section-registro .card .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-section-registro .card .form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.auth-section-registro .card .form-group input,
+.auth-section-registro .card .form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-section-registro .card .form-group input[type="number"] {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+/* Contenedor específico para los campos RUT y dígito */
+.auth-section-registro .card .form-group .input-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Para los campos RUT y Dígito */
+.auth-section-registro .card .form-group input.rut {
+    width: 75%; /* RUT ocupa el 75% */
+    margin-right: 5px; /* Separación entre los campos */
+}
+
+.auth-section-registro .card .form-group input.digit-rut {
+    width: 20%; /* Dígito ocupa el 20% */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espacio entre el número y el dígito */
+    text-align: center;
+}
+
+/* Guion visual entre el RUT y el dígito */
+.auth-section-registro .card .form-group .input-group .input-group-text {
+    background-color: transparent;
+    border: none;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+/* Estilo para responsive */
+@media (max-width: 768px) {
+    .auth-section-registro .card .form-group-container,
+    .auth-section-registro .card .form-group-container-second-row,
+    .auth-section-registro .card .form-group-container-third-row {
+        grid-template-columns: 1fr; /* Todo en una sola columna */
+    }
+
+    .auth-section-registro .card .form-group .input-group {
+        flex-direction: column; /* Coloca el RUT y el dígito en columnas separadas en pantallas pequeñas */
+    }
+
+    .auth-section-registro .card .form-group input.rut,
+    .auth-section-registro .card .form-group input.digit-rut {
+        width: 100%; /* Ambos campos ocupan el 100% en pantallas pequeñas */
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-section-registro .card .form-group-container,
+    .auth-section-registro .card .form-group-container-second-row,
+    .auth-section-registro .card .form-group-container-third-row {
+        grid-template-columns: 1fr; /* Todo en una sola columna */
+    }
+
+    .auth-section-registro .card .form-group .input-group {
+        flex-direction: column; /* Coloca el RUT y el dígito en columnas separadas en pantallas pequeñas */
+    }
+
+    .auth-section-registro .card .form-group input.rut,
+    .auth-section-registro .card .form-group input.digit-rut {
+        width: 100%; /* Ambos campos ocupan el 100% en pantallas pequeñas */
+        margin-right: 0;
+    }
+}
+
+
+

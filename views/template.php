@@ -37,22 +37,24 @@ session_start();
   <link href="views/dist/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="views/dist/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="views/dist/css/css-creado.css">
 </head>
 
 <body class="">
 
-
+<!--Solo cuando estoy logeado va a funcionar -->
   <?php
-  if (isset($_SESSION["validar"]) == true) {
+  if (!isset($_SESSION["validar"]) == true) {
 
-    include "views/modules/navegador.php";
+    //include "views/modules/navegador.php";
 
     $modulos = new Enlaces();
     $modulos->enlacesController();
   } else {
 
     include "modules/ingreso.php";
+    include "modules/registro.php";
   }
   ?>
   <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->

@@ -8,8 +8,8 @@ class EnlacesModels{
 		if($enlaces == "ingreso" ||
 		   $enlaces == "inicio"  ||
 		   $enlaces == "salir"  ||
-	 	   $enlaces == "usuarios" 
-		//    $enlaces == "eventosDet" ||
+	 	   $enlaces == "usuarios" ||
+		   $enlaces == "registro" 
 		//    $enlaces == "eventosNotas" ||
 		//    $enlaces == "eventosImagen" ||
 		//    $enlaces == "sociales" ||
